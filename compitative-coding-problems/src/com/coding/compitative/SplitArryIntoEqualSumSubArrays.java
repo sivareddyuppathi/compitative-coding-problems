@@ -1,11 +1,23 @@
 package com.coding.compitative;
 
+import java.util.Arrays;
+
 public class SplitArryIntoEqualSumSubArrays {
 
 	public static void main(String[] args) {
 		int[] arr = { 1, 2, 3, 4, 5, 5 };
 
-		findSplitPoint(arr, arr.length);
+		int splitPoint = findSplitPoint(arr, arr.length);
+
+		int[] rightPart = Arrays.copyOfRange(arr, 0, splitPoint);
+		int[] leftPart = Arrays.copyOfRange(arr, splitPoint + 1, arr.length - 1);
+
+//		#1
+		Arrays.stream(rightPart).forEach(System.out::print);
+//		#2
+		Arrays.asList(leftPart).stream().forEach(s -> System.out.println(s));
+//		#3
+		System.out.println(Arrays.toString(rightPart));
 	}
 
 	private static int findSplitPoint(int[] arr, int n) {

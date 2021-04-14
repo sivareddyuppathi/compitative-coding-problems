@@ -1,17 +1,13 @@
-package com.codechef.coding.mar2021;
-
-import java.util.stream.Stream;
+package com.codechef.coding.mar2021.div3;
 
 public class NoTimeToWait {
 	public static void main(String[] args) {
+		int[] arr = { 2, 6, 3 };
+		int[] a = { 1, 2 };
+
+		String isTimeEnogh = isTimeEnoghToSolveProblem(arr, a);
 		
-		Stream<Integer> s = Stream.iterate(5, n->n+2).limit(5);
-		s.forEach(System.out::println);
-//		int[] arr = { 2, 6, 3 };
-//		int[] a = { 1, 2 };
-//
-//		String isTimeEnogh = isTimeEnoghToSolveProblem(arr, a);
-//		System.out.println(isTimeEnogh);
+		System.out.println(isTimeEnogh);
 	}
 
 	private static String isTimeEnoghToSolveProblem(int[] arr, int[] a) {
@@ -22,10 +18,10 @@ public class NoTimeToWait {
 
 		for (int i = 0; i < noOFTimeZones; i++) {
 			int havingHours = hoursLeft + a[i];
-			if (havingHours >= neededHours)
+			if(havingHours>=neededHours) {
 				return "YES";
+			}
 		}
-
 		return "NO";
 	}
 }

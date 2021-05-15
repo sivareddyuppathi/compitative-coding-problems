@@ -15,6 +15,7 @@ public class MaxSubArraySum {
 			arr[i] = sc.nextInt();
 		}
 		System.out.println(maxSubArraySum(arr));
+		System.out.println(maxSubArrSum(arr));
 		sc.close();
 	}
 
@@ -25,6 +26,21 @@ public class MaxSubArraySum {
 			sum = Math.max(nums[i], sum + nums[i]);
 			result = Math.max(result, sum);
 		}
+		return result;
+	}
+
+	private static int maxSubArrSum(int[] arr) {
+
+		int result = 0;
+		int sum = 0;
+
+		for (int i = arr.length-1; i >= 0; i--) {
+			sum += arr[i];
+			
+			result += sum * (i+1);
+			
+		}
+
 		return result;
 	}
 }

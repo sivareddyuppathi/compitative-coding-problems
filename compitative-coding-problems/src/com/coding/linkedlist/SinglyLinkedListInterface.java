@@ -19,13 +19,15 @@ public interface SinglyLinkedListInterface {
 	int noOfNodesRecursive();
 
 // **************REVERSE**************
-	Node reverseLLUsing3Pinters(Node headCopy); // reverse and return head node
+	Node reverseLLUsing3Pointers(Node headCopy); // reverse and return head node
 
 	Node reverseLLUsing1Pointer(Node headCopy);
 
 	Node reverseLLRecursive(Node headCopy);
 
 	Node reverseLLRecursive2(Node head);
+
+	Node revrseKGroupLL(Node head, int k);
 
 	// **************MERGE**************
 	Node mergeTwoListsRecu(Node n1, Node n2);

@@ -5,6 +5,6 @@ class Solution {
              num -= i;
              i += 2;
          }
-         return num == 0;
+        return num == 0;
     }
 }
